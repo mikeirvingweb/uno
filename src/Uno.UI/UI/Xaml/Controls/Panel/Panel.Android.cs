@@ -20,20 +20,6 @@ namespace Windows.UI.Xaml.Controls
 {
 	public partial class Panel : IEnumerable
 	{
-		private readonly SerialDisposable _backgroundBrushChanged = new SerialDisposable();
-		private readonly SerialDisposable _borderBrushChanged = new SerialDisposable();
-		private readonly BorderLayerRenderer _borderRenderer;
-
-		public Panel()
-		{
-			_borderRenderer = new BorderLayerRenderer(this);
-
-			Initialize();
-
-			this.RegisterLoadActions(UpdateBorder, () => _borderRenderer.Clear());
-
-		}
-
 		protected override void OnChildViewAdded(View child)
 		{
 			var element = child as IFrameworkElement;

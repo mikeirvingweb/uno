@@ -20,17 +20,9 @@ namespace Windows.UI.Xaml.Controls
 {
 	public partial class ContentPresenter
 	{
-		private readonly BorderLayerRenderer _borderRenderer;
-
-		public ContentPresenter()
+		partial void InitializePlatform()
 		{
-			_borderRenderer = new BorderLayerRenderer(this);
-
-			InitializeContentPresenter();
-
 			IFrameworkElementHelper.Initialize(this);
-
-			this.RegisterLoadActions(UpdateBorder, () => _borderRenderer.Clear());
 		}
 
 		protected override void OnLayoutCore(bool changed, int left, int top, int right, int bottom)
