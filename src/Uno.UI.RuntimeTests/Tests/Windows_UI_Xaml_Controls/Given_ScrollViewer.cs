@@ -246,7 +246,7 @@ namespace Uno.UI.RuntimeTests.Tests.Windows_UI_Xaml_Controls
 
 			const double ScrollViewerHeight = ContentHeight + 2 * ContentMargin;
 			await WindowHelper.WaitForEqual(ScrollViewerHeight, () => SUT.ActualHeight);
-			Assert.AreEqual(ContentHeight, SUT.ExtentHeight);
+			Assert.AreEqual(ScrollViewerHeight, SUT.ExtentHeight);
 		}
 
 		[TestMethod]
@@ -277,7 +277,7 @@ namespace Uno.UI.RuntimeTests.Tests.Windows_UI_Xaml_Controls
 
 			const double ScrollViewerWidth = ContentWidth + 2 * ContentMargin;
 			await WindowHelper.WaitForEqual(ScrollViewerWidth, () => SUT.ActualWidth);
-			Assert.AreEqual(ContentWidth, SUT.ExtentWidth);
+			Assert.AreEqual(ScrollViewerWidth, SUT.ExtentWidth);
 		}
 	}
 }
